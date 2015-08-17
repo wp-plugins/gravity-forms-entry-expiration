@@ -1,14 +1,16 @@
-=== Gravity Forms Entry Expiration ===
+=== Entry Expiration for Gravity Forms ===
 Contributors: travislopes
 Tags: gravity forms, entry, expiration
 Requires at least: 3.9.2
 Tested up to: 4.1.0
 Stable tag: 4.1.0
 
-Provides a simple way to remove old entries in Gravity Forms.
+Automatically remove old form entries on a custom, defined schedule
 
 == Description ==
-This WordPress plugin allows you to automatically delete Gravity Forms entries older than a defined timeframe. After activating the plugin, set the oldest age for an entry on the Entry Expiration Settings page inside of Gravity Forms. At midnight, the plugin will delete all entries older than the time you set. Only forms set to be included in the entry expiration will have their entries deleted. You can include a form in the entry expiration process by selecting the "Include in entry expiration" option under Form Settings.
+When integrating Gravity Forms with a third-party service, it's often not necessary to keep entries around after a short period of time as you already have the data imported elsewhere.
+
+Entry Expiration for Gravity Forms allows you to automatically delete Gravity Forms entries older than a defined timeframe. After activating the plugin, set the oldest age for an entry on the Entry Expiration Settings page. At midnight, the plugin will delete all entries on enabled forms that are older than the time you set.
 
 == Installation ==
 = Requirements =
@@ -23,6 +25,9 @@ This WordPress plugin allows you to automatically delete Gravity Forms entries o
 1. Navigate to the Form Settings page for each form you want to have entries automatically expire and include them in the expiration process.
 
 == Changelog ==
+= v1.2.2 =
+* Changed plugin loading method
+* Added "gf_entryexpiration_recurrence" hook to change cron recurrence
 = v1.2.1 = 
 * Adjusted entry older than date to not be relative to midnight
 = v1.2.0 = 
